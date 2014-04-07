@@ -3,16 +3,14 @@ class SessionsController < ApplicationController
       # renderöi kirjautumissivun
     end
 
-    def create
+    def create      
       user = User.find_by username: params[:username]
       session[:user_id] = user.id if not user.nil?
       redirect_to user   
     end
 
     def destroy
-      # nollataan sessio
-      session[:user_id] = nil
-      # uudelleenohjataan sovellus pääsivulle 
+      session[:user_id] = nil 
       redirect_to :root
     end
 end

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Hearthstone::Application.load_tasks
+Carddatebase::Application.load_tasks

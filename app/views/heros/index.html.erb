@@ -1,0 +1,26 @@
+<h1>Sankarit</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sankari</th>
+      <th>Nimi</th>
+      <th>Taito</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heros.each do |hero| %>
+      <tr>
+        <td><%= link_to hero.heroclass, hero %></td>
+        <td><%= hero.name %></td>
+        <td><%= hero.power %></td>
+        <td><%= link_to 'Edit', edit_hero_path(hero) %></td>
+        <td><%= link_to 'Destroy', hero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

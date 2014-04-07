@@ -1,11 +1,10 @@
-<h1>Listing cards</h1>
+<h1>Kortit</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Mana</th>
-      <th>Rarity</th>
       <th>Attack</th>
       <th>Health</th>
       <th>Text</th>
@@ -18,9 +17,8 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
-        <td><%= link_to card.name, card_path(card.id) %></td>
+        <td><%= card.name %></td>
         <td><%= card.mana %></td>
-        <td><%= card.rarity %></td>
         <td><%= card.attack %></td>
         <td><%= card.health %></td>
         <td><%= card.text %></td>

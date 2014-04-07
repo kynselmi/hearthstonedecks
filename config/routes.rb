@@ -1,19 +1,15 @@
-Hearthstone::Application.routes.draw do
-  resources :users
-
+Carddatebase::Application.routes.draw do
+  resources :heros
   resources :decks
-
   resources :cards
+  resources :users
+  resources :sessions, only: [:new, :create]
 
   root 'cards#index'
 
   get 'signup', to: 'users#new'
-
   get 'signin', to: 'sessions#new'
-
   delete 'signout', to: 'sessions#destroy'
-
-  resources :sessions, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

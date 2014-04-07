@@ -1,17 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2>Username:</h2>
+  <strong>Username:</strong>
   <%= @user.username %>
-</p>
-
-<p>
-	<strong>Decks:</strong>
-	<% @user.decks.each do |deck| %>
-		<ul>
-			<li> <%= link_to deck.name, deck %> </li>
-		</ul>
-	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

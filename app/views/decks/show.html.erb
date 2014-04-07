@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2>Name:</h2>
+  <strong>Name:</strong>
   <%= @deck.name %>
 </p>
-
-<ul>
-	<% @deck.cards.each do |card| %>
-		<li> <%= link_to card.name, card_path(card.id) %> </li>
-	<% end %>
-</ul>
 
 <%= link_to 'Edit', edit_deck_path(@deck) %> |
 <%= link_to 'Back', decks_path %>

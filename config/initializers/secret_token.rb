@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Hearthstone::Application.config.secret_key_base = '06bcae5e351d0511ebc29de98454ae216bbdb658534a98595b2c616a8c15a1172c052e8d1356d47ad58eb67235dc2966cee4c05dfc96cb596fc6d495f35e20e8'
+Carddatebase::Application.config.secret_key_base = '51fb3de04be7be060207a32ad0e69bff698a67abe4cdaea23d17cb7e8f26ffec6c2b75c68e9d4489d19aebcb6afbd3befe35e19aa755da967d2771227913a619'

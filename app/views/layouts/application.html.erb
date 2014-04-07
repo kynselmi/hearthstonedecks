@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hearthstone</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-
-<body>
-  <div class="navibar">    
-    <%= link_to 'Cards', cards_path %>
-    <%= link_to 'Decks', decks_path %>
-    <%= link_to 'Users', users_path %> |
-
-    <% unless current_user.nil? %>
-      <%= link_to  current_user.username, current_user %>
-      <%= link_to 'Sign Out', signout_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign In', signin_path %>
-      <%= link_to 'Sign Up', signup_path %>
-    <% end %>
-  </div>
-
-<%= yield %>
-
-<% if not current_user.nil? %>
-  <p><%= current_user.username %> signed in</p>
-<% end %>
-
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Carddatebase" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Carddatebase" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+  </body>
 </html>

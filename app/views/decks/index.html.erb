@@ -1,10 +1,9 @@
-<h1>Listing decks</h1>
+<h1>Pakat</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Creator</th>
+      <th>Nimi</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,9 +13,7 @@
   <tbody>
     <% @decks.each do |deck| %>
       <tr>
-        <td><%= link_to deck.name, deck_path(deck.id) %></td>
-        <td><%= link_to deck.user.username, deck.user %></td>
-        <td><%= link_to 'Show', deck %></td>
+        <td><%= link_to deck.name, deck %></td>
         <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
         <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -26,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Deck', new_deck_path %>
+<%= link_to 'Luo uusi pakka', new_deck_path %>

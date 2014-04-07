@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.find_by_sql("SELECT * FROM users")
   end
 
   # GET /users/1
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
- def user_params
-     params.require(:user).permit(:username, :password, :password_confirmation)
-  end
+    def user_params
+      params.require(:user).permit(:username)
+    end
 end

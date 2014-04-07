@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228015313) do
+ActiveRecord::Schema.define(version: 20140323183936) do
 
   create_table "cards", force: true do |t|
     t.string   "name"
     t.integer  "mana"
-    t.string   "rarity"
     t.integer  "attack"
     t.integer  "health"
     t.string   "text"
@@ -28,12 +27,12 @@ ActiveRecord::Schema.define(version: 20140228015313) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
-  create_table "in_decks", force: true do |t|
-    t.integer  "card_id"
-    t.integer  "deck_id"
+  create_table "heros", force: true do |t|
+    t.string   "heroclass"
+    t.string   "name"
+    t.string   "power"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,7 +41,6 @@ ActiveRecord::Schema.define(version: 20140228015313) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
   end
 
 end
