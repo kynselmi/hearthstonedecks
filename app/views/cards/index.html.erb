@@ -3,10 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Mana</th>
-      <th>Attack</th>
-      <th>Health</th>
+      <th><%= link_to 'Name', cards_path(order:"name") %></th>
+      <th><%= link_to 'Mana', cards_path(order:"mana") %></th>
+      <th><%= link_to 'Attack', cards_path(order:"attack") %></th>
+      <th><%= link_to 'Health', cards_path(order:"health") %></th>
       <th>Text</th>
       <th></th>
       <th></th>
@@ -17,12 +17,11 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
-        <td><%= card.name %></td>
+        <td><%= link_to card.name, card %></td>
         <td><%= card.mana %></td>
         <td><%= card.attack %></td>
         <td><%= card.health %></td>
         <td><%= card.text %></td>
-        <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
         <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -5,6 +5,15 @@ class CardsController < ApplicationController
   # GET /cards.json
   def index
     @cards = Card.all
+
+    order = params[:order] || 'name'
+
+    case order
+      when 'name' then @cards.sort_by!{ |c| c.name }
+      when 'mana' then @cards.sort_by!{ |c| c.mana }
+      when 'attack' then @cards.sort_by!{ |c| c.attack }
+      when 'health' then @cards.sort_by!{ |c| c.health }
+    end
   end
 
   # GET /cards/1

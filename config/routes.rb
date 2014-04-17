@@ -1,4 +1,6 @@
 Carddatebase::Application.routes.draw do
+  resources :in_decks
+
   resources :heros
   resources :decks
   resources :cards

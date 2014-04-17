@@ -5,6 +5,13 @@ class HerosController < ApplicationController
   # GET /heros.json
   def index
     @heros = Hero.all
+
+    order = params[:order] || 'heroclass'
+
+    case order
+      when 'heroclass' then @heros.sort_by!{ |h| h.heroclass }
+      when 'name' then @heros.sort_by!{ |h| h.name }
+    end
   end
 
   # GET /heros/1
