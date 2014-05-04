@@ -12,8 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :käyttäjä %><br>
     <%= f.text_field :username %>
+  </div>
+    <div class="field">
+    <%= f.label :salasana %><br>
+    <%= f.text_field :password %>
+  </div>
+    <div class="field">
+    <%= f.label :salasanan_vahvistus %><br>
+    <%= f.text_field :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>

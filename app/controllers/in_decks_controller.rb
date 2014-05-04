@@ -25,6 +25,7 @@ class InDecksController < ApplicationController
   # POST /in_decks.json
   def create
     @in_deck = InDeck.new(in_deck_params)
+    
 
     respond_to do |format|
       if @in_deck.save

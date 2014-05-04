@@ -1,4 +1,7 @@
 class Deck < ActiveRecord::Base
+
+	validate :name, presence: true
+
 	belongs_to :user
 	belongs_to :hero
 	

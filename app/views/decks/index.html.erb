@@ -1,10 +1,10 @@
 <h1>Pakat</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nimi</th>
-      <th></th>
+      <th>Tekijä</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,6 +14,7 @@
     <% @decks.each do |deck| %>
       <tr>
         <td><%= link_to deck.name, deck %></td>
+        <td><%= link_to deck.user.username, deck.user%></td>
         <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
         <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

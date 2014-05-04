@@ -28,6 +28,7 @@ class DecksController < ApplicationController
 
     respond_to do |format|
       if @deck.save
+        current_user.decks << @deck
         format.html { redirect_to @deck, notice: 'Deck was successfully created.' }
         format.json { render action: 'show', status: :created, location: @deck }
       else

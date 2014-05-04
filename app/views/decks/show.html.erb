@@ -1,13 +1,63 @@
-<p id="notice"><%= notice %></p>
+<br>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nimi:</strong>
   <%= @deck.name %>
 </p>
 
-<th>Nimi</th>
-<th></th>
-<th></th>
+<p>
+  <strong>Käyttäjä:</strong>
+  <%= link_to @deck.user.username, @deck.user %>
+</p>
 
-<%= link_to 'Edit', edit_deck_path(@deck) %> |
-<%= link_to 'Back', decks_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mana</th>
+      <th>Attack</th>
+      <th>Health</th>
+      <th>Text</th>
+    </tr>
+  </thead>
+
+<tbody>
+   <% @deck.cards.each do |card| %>
+	    <tr>
+	      <td> <%= card.name %></td>
+	      <td> <%= card.mana %></td>
+	      <td> <%= card.attack %></td>
+		    <td> <%= card.health %></td>
+	      <td> <%= card.text %></td>
+	    </tr>
+   <% end %>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mana</th>
+      <th>Attack</th>
+      <th>Health</th>
+      <th>Text</th>
+      <th>Lisää kortti</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      <% Card.all.each do |card| %>
+      <tr>
+        <td> <%= card.name %></td>
+        <td> <%= card.mana %></td>
+        <td> <%= card.attack %></td>
+        <td> <%= card.health %></td>
+        <td> <%= card.text %></td>
+        <td> <%= link_to 'Lisää', in_decks_path(@card.id => :card_id ,@deck.id => :deck_id), method: :post %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
