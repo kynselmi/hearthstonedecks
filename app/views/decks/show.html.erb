@@ -54,7 +54,7 @@
         <td> <%= card.attack %></td>
         <td> <%= card.health %></td>
         <td> <%= card.text %></td>
-        <td> <%= link_to 'Lisää', in_decks_path(@card.id => :card_id ,@deck.id => :deck_id), method: :post %> </td>
+        <td> <%= link_to 'Lisää', in_decks_path(:card_id => card.id, :deck_id => @deck.id), method: :post %> </td>
       </tr>
     <% end %>
   </tbody>
