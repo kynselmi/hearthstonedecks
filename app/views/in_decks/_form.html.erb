@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :card_id %><br>
-    <%= f.number_field :card_id %>
+     <%= f.select :card_id, options_from_collection_for_select(@cards, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :deck_id %><br>
-    <%= f.number_field :deck_id %>
+    <%= f.select :deck_id, options_from_collection_for_select(@decks, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

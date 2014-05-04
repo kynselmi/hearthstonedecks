@@ -1,3 +1,3 @@
 Linkit:
 ===================================
-[Heroku:] (https://hearthstone-page.herokuapp.com "Heroku")
+[Heroku] (https://hearthstone-page.herokuapp.com "Heroku")

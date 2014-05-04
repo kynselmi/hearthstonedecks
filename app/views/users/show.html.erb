@@ -5,5 +5,12 @@
   <%= @user.username %>
 </p>
 
+<% unless @user.decks.nil? %>
+<ul>
+<% @user.decks do |deck| %>
+<li> <%= link_to deck, deck.name %> </li>
+<% end %>
+<% end %> 
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

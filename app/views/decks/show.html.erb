@@ -13,14 +13,15 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nimi</th>
       <th>Mana</th>
       <th>Attack</th>
       <th>Health</th>
-      <th>Text</th>
+      <th>Teksti</th>
     </tr>
   </thead>
 
+<h3>Pakan kortit</h3>
 <tbody>
    <% @deck.cards.each do |card| %>
 	    <tr>
@@ -37,15 +38,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nimi</th>
       <th>Mana</th>
       <th>Attack</th>
       <th>Health</th>
-      <th>Text</th>
+      <th>Teksti</th>
       <th>Lisää kortti</th>
     </tr>
   </thead>
 
+<h3>Kaikki kortit</h3>
     <tbody>
       <% Card.all.each do |card| %>
       <tr>
@@ -54,7 +56,7 @@
         <td> <%= card.attack %></td>
         <td> <%= card.health %></td>
         <td> <%= card.text %></td>
-        <td> <%= link_to 'Lisää', in_decks_path(:card_id => card.id, :deck_id => @deck.id), method: :post %> </td>
+        <td> <%= link_to 'Lisää', new_in_deck_path%> </td>
       </tr>
     <% end %>
   </tbody>

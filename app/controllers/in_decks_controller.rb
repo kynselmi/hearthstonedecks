@@ -15,6 +15,8 @@ class InDecksController < ApplicationController
   # GET /in_decks/new
   def new
     @in_deck = InDeck.new
+    @cards = Card.all
+    @decks = Deck.all
   end
 
   # GET /in_decks/1/edit
@@ -25,11 +27,11 @@ class InDecksController < ApplicationController
   # POST /in_decks.json
   def create
     @in_deck = InDeck.new(in_deck_params)
-    
+
 
     respond_to do |format|
       if @in_deck.save
-        format.html { redirect_to @in_deck, notice: 'In deck was successfully created.' }
+        format.html { redirect_to :back, notice: 'In deck was successfully created.' }
         format.json { render action: 'show', status: :created, location: @in_deck }
       else
         format.html { render action: 'new' }
